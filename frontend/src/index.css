@@ -1,0 +1,77 @@
+/* Import a modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Basic resets */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Dark page background */
+  background-color: #111827; 
+  color: #e5e7eb;
+}
+
+/* THIS IS THE FIX: It centers your app on the page */
+#root {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+/* ------------------------------------------- */
+/* --- COLORFUL NEBULA BACKGROUND ANIMATION --- */
+/* ------------------------------------------- */
+
+.nebula-background {
+    /* Full viewport size */
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10; /* Ensure it stays behind all content */
+    overflow: hidden;
+    background: #111827; /* Dark base color */
+}
+
+.nebula-gradient {
+    /* Use a very large element for the gradient to create fluid motion */
+    width: 300vmax;
+    height: 300vmax;
+    position: absolute;
+    
+    /* Define the complex gradient using strong, dark, colorful tones */
+    background: 
+        radial-gradient(circle at 15% 50%, rgba(200, 50, 255, 0.25) 0%, transparent 20%), /* Deep Purple */
+        radial-gradient(circle at 80% 90%, rgba(50, 200, 255, 0.3) 0%, transparent 15%), /* Soft Cyan */
+        radial-gradient(circle at 50% 10%, rgba(255, 0, 150, 0.2) 0%, transparent 10%), /* Bright Magenta */
+        radial-gradient(circle at 30% 80%, rgba(0, 255, 100, 0.15) 0%, transparent 15%), /* Green Accent */
+        radial-gradient(circle at 90% 20%, rgba(255, 150, 0, 0.1) 0%, transparent 10%), /* Orange Highlight */
+        radial-gradient(circle at 50% 50%, rgba(70, 0, 200, 0.3) 0%, transparent 25%); /* Deep Blue Center */
+
+    /* Start the animation */
+    animation: nebulaMove 40s linear infinite alternate;
+}
+
+/* Define the animation keyframes for slow, organic movement */
+@keyframes nebulaMove {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-150%, -150%) rotate(10deg);
+    }
+}
+
+/* IMPORTANT: Add the glass effect to your main dashboard card */
+/* (Assuming your main content area uses the class 'dashboard-card' or similar) */
+.dashboard-card { 
+    backdrop-filter: blur(12px) brightness(0.9); 
+    background-color: rgba(31, 41, 55, 0.7); 
+    /* Make sure your existing card styles are still applied! */
+}
