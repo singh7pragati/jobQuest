@@ -23,7 +23,7 @@ function AutoMatch() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/auto-match-role/",
+        "https://jobquest-backend-iz7j.onrender.com/auto-match-role/",
         formData,
         {
           headers: {
@@ -53,7 +53,7 @@ function AutoMatch() {
     
     try {
       const response = await axios.post(
-        "http://localhost:8000/generate-report/",
+        "https://jobquest-backend-iz7j.onrender.com/generate-report/",
         {
           // Send data for the *best matched* role
           role: result.best_matched_role, 

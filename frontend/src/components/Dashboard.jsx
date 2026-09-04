@@ -40,8 +40,8 @@ function Dashboard() {
         setLoading(true);
         
         const [dashResponse, keywordResponse] = await Promise.all([
-          axios.get("http://localhost:8000/dashboard-data/"),
-          axios.get("http://localhost:8000/keyword-data/")
+          axios.get("https://jobquest-backend-iz7j.onrender.com/dashboard-data/"),
+          axios.get("https://jobquest-backend-iz7j.onrender.com/keyword-data/")
         ]);
 
         setData(dashResponse.data);

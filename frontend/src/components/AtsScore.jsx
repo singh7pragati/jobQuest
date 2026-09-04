@@ -13,7 +13,7 @@ function AtsScore() {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/jobs/");
+        const response = await axios.get("https://jobquest-backend-iz7j.onrender.com/jobs/");
         setJobRolesList(response.data);
         if (response.data.length > 0) {
           setJobRole(response.data[0]);
@@ -42,7 +42,7 @@ function AtsScore() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/upload-resume/",
+        "https://jobquest-backend-iz7j.onrender.com/upload-resume/",
         formData,
         {
           headers: {
@@ -72,7 +72,7 @@ function AtsScore() {
     
     try {
       const response = await axios.post(
-        "http://localhost:8000/generate-report/",
+        "https://jobquest-backend-iz7j.onrender.com/generate-report/",
         {
           role: result.role,
           ats_score: result.ats_score_percent,

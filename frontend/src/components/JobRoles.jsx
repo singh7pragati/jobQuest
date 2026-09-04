@@ -10,7 +10,7 @@ function JobRoles() {
     const fetchJobs = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:8000/jobs/");
+        const response = await axios.get("https://jobquest-backend-iz7j.onrender.com/jobs/");
         setRoles(response.data); 
         setError(null);
       } catch (err) {
